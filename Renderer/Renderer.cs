@@ -1,9 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace Renderer
 {
@@ -39,9 +38,9 @@ namespace Renderer
             return buf;
         }
 
-        public static Bitmap RenderBitmap(Scene scene, int width, int height)
+        public static Image RenderBitmap(Scene scene, int width, int height)
         {
-            var bitmap = new Bitmap(width, height);
+            var image = new Image<Rgba32>(width, height);
             int i = 0;
             for (int x = 0; x < width; x++)
             {
@@ -49,12 +48,12 @@ namespace Renderer
                 {
                     (var u, var v) = GetNormalizedScreenCoordinates(x, y, width, height);
                     var pixel = ComputePixel(scene, u, v);
-                    var color = System.Drawing.Color.FromArgb((int)(pixel.color.R * 255), (int)(pixel.color.G * 255), (int)(pixel.color.B * 255));
-                    bitmap.SetPixel(x, y, color);
+                    Rgba32 rgb = new Rgba32((byte)(pixel.color.R * 255), (byte)(pixel.color.G * 255), (byte)(pixel.color.B * 255));
+                    image[x, y] = rgb;
                     System.Diagnostics.Debug.WriteLine("Pixel: " + ++i + "/" + (width * height));
                 }
             }
-            return bitmap;
+            return image;
         }
 
         private static (double, double) GetNormalizedScreenCoordinates(double x, double y, double width, double height)

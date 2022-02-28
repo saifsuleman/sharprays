@@ -1,13 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "JWvtyIeRtVucQq9Gi+I2yK2GpFU8usiBtL6khvnTNc537PmKdxH4YEsQmV0RucP1keFV1skYhR+XWQt/kK4i0w==",
+  "dgSpecHash": "Ahuahrg9qdNatrUwcHzFP2YPm6Udufg55FieUVyMtybr3cuI7xfRKuy1dT8efCTh+FlA7fIAJCjyNikuk1TCZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Saif\\source\\repos\\Renderer\\Renderer\\Renderer.csproj",
+  "projectFilePath": "/Users/saifs/sharprays/Renderer/Renderer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Saif\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\Saif\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
-    "C:\\Users\\Saif\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
-    "C:\\Users\\Saif\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+    "/Users/saifs/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/monogame.content.builder.task/3.8.0.1641/monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/monogame.framework.desktopgl/3.8.0.1641/monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/runtime.osx.10.10-x64.corecompat.system.drawing/6.0.5.128/runtime.osx.10.10-x64.corecompat.system.drawing.6.0.5.128.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/sixlabors.imagesharp/2.0.0/sixlabors.imagesharp.2.0.0.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "/Users/saifs/.nuget/packages/system.text.encoding.codepages/5.0.0/system.text.encoding.codepages.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
