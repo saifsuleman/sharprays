@@ -1,6 +1,154 @@
 {
   "version": 3,
   "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Microsoft.NETCore.Platforms/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "MonoGame.Content.Builder.Task/3.8.0.1641": {
+        "type": "package",
+        "build": {
+          "build/MonoGame.Content.Builder.Task.props": {},
+          "build/MonoGame.Content.Builder.Task.targets": {}
+        }
+      },
+      "MonoGame.Framework.DesktopGL/3.8.0.1641": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libSDL2-2.0.so.0": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libopenal.so.1": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libSDL2-2.0.0.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/osx/native/libopenal.1.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-x64/native/SDL2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/soft_oal.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/SDL2.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/soft_oal.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Text.Encoding.CodePages/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    },
     "net6.0": {
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
@@ -79,101 +227,6 @@
           "runtimes/win-x86/native/soft_oal.dll": {
             "assetType": "native",
             "rid": "win-x86"
-          }
-        }
-      },
-      "runtime.osx.10.10-x64.CoreCompat.System.Drawing/6.0.5.128": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx-x64/native/libX11.6.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libXau.6.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libXdmcp.6.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libXext.6.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libXrender.1.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libcairo.2.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libfontconfig.1.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libfreetype.6.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libgdiplus.0.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libgdiplus.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libgif.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libglib-2.0.0.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libintl.8.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libjpeg.9.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libpcre.1.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libpixman-1.0.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libpng16.16.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libtiff.5.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libxcb-render.0.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libxcb-shm.0.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libxcb.1.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
           }
         }
       },
@@ -400,39 +453,6 @@
         "runtimes/win-x86/native/soft_oal.dll"
       ]
     },
-    "runtime.osx.10.10-x64.CoreCompat.System.Drawing/6.0.5.128": {
-      "sha512": "rjnyMb0Tk3k4DB5YeEeUBg9jbOY+VrT84o8Npkxayv2Vz1qSqgCfLATbvZ1oCuplSqHLINsSRMvkDup39pTIPw==",
-      "type": "package",
-      "path": "runtime.osx.10.10-x64.corecompat.system.drawing/6.0.5.128",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll",
-        "runtime.osx.10.10-x64.corecompat.system.drawing.6.0.5.128.nupkg.sha512",
-        "runtime.osx.10.10-x64.corecompat.system.drawing.nuspec",
-        "runtimes/osx-x64/native/libX11.6.dylib",
-        "runtimes/osx-x64/native/libXau.6.dylib",
-        "runtimes/osx-x64/native/libXdmcp.6.dylib",
-        "runtimes/osx-x64/native/libXext.6.dylib",
-        "runtimes/osx-x64/native/libXrender.1.dylib",
-        "runtimes/osx-x64/native/libcairo.2.dylib",
-        "runtimes/osx-x64/native/libfontconfig.1.dylib",
-        "runtimes/osx-x64/native/libfreetype.6.dylib",
-        "runtimes/osx-x64/native/libgdiplus.0.dylib",
-        "runtimes/osx-x64/native/libgdiplus.dylib",
-        "runtimes/osx-x64/native/libgif.dylib",
-        "runtimes/osx-x64/native/libglib-2.0.0.dylib",
-        "runtimes/osx-x64/native/libintl.8.dylib",
-        "runtimes/osx-x64/native/libjpeg.9.dylib",
-        "runtimes/osx-x64/native/libpcre.1.dylib",
-        "runtimes/osx-x64/native/libpixman-1.0.dylib",
-        "runtimes/osx-x64/native/libpng16.16.dylib",
-        "runtimes/osx-x64/native/libtiff.5.dylib",
-        "runtimes/osx-x64/native/libxcb-render.0.dylib",
-        "runtimes/osx-x64/native/libxcb-shm.0.dylib",
-        "runtimes/osx-x64/native/libxcb.1.dylib"
-      ]
-    },
     "SixLabors.ImageSharp/2.0.0": {
       "sha512": "hZmADrZvn1q9tjPNuuvvl8F8vkz+LFEhnfBkuvwq6Bjgyj3BcOBk6ct4qfssrs25vWIITeH1HkIVdcCYWacpLw==",
       "type": "package",
@@ -569,36 +589,49 @@
     }
   },
   "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "MonoGame.Content.Builder.Task >= 3.8.0.1641",
+      "MonoGame.Framework.DesktopGL >= 3.8.0.1641",
+      "SixLabors.ImageSharp >= 2.0.0",
+      "System.Drawing.Common >= 6.0.0"
+    ],
     "net6.0": [
       "MonoGame.Content.Builder.Task >= 3.8.0.1641",
       "MonoGame.Framework.DesktopGL >= 3.8.0.1641",
       "SixLabors.ImageSharp >= 2.0.0",
-      "System.Drawing.Common >= 6.0.0",
-      "runtime.osx.10.10-x64.CoreCompat.System.Drawing >= 6.0.5.128"
+      "System.Drawing.Common >= 6.0.0"
     ]
   },
   "packageFolders": {
-    "/Users/saifs/.nuget/packages/": {}
+    "C:\\Users\\Saif\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/saifs/sharprays/Renderer/Renderer.csproj",
+      "projectUniqueName": "C:\\Users\\Saif\\source\\repos\\Renderer\\Renderer\\Renderer.csproj",
       "projectName": "Renderer",
-      "projectPath": "/Users/saifs/sharprays/Renderer/Renderer.csproj",
-      "packagesPath": "/Users/saifs/.nuget/packages/",
-      "outputPath": "/Users/saifs/sharprays/Renderer/obj/",
+      "projectPath": "C:\\Users\\Saif\\source\\repos\\Renderer\\Renderer\\Renderer.csproj",
+      "packagesPath": "C:\\Users\\Saif\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Saif\\source\\repos\\Renderer\\Renderer\\obj\\",
       "projectStyle": "PackageReference",
+      "crossTargeting": true,
       "configFilePaths": [
-        "/Users/saifs/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Saif\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net6.0",
+        "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        },
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {}
@@ -611,6 +644,43 @@
       }
     },
     "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "MonoGame.Content.Builder.Task": {
+            "target": "Package",
+            "version": "[3.8.0.1641, )"
+          },
+          "MonoGame.Framework.DesktopGL": {
+            "target": "Package",
+            "version": "[3.8.0.1641, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+      },
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
@@ -629,10 +699,6 @@
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[6.0.0, )"
-          },
-          "runtime.osx.10.10-x64.CoreCompat.System.Drawing": {
-            "target": "Package",
-            "version": "[6.0.5.128, )"
           }
         },
         "imports": [
@@ -650,7 +716,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

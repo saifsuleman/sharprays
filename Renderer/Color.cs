@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Renderer
 {
@@ -9,6 +10,14 @@ namespace Renderer
         public double R;
         public double G;
         public double B;
+
+        public Color(string hex)
+        {
+            int rgb = Convert.ToInt32(Regex.Replace(hex, @"#", ""), 16);
+            R = ((rgb >> 16) & 255) / 255.0;
+            G = ((rgb >> 8) & 255) / 255.0;
+            B = (rgb & 255) / 255.0;
+        }
 
         public Color(double r, double g, double b)
         {

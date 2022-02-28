@@ -14,7 +14,7 @@ namespace Renderer
         private Scene _scene;
         private Rectangle _tracedSize;
         private Texture2D _canvas;
-        private double _resolution = 1.0/16.0;
+        private double _resolution = 1/16.0;
         private DateTime? lastScreenshot = null;
 
         public Game1()
@@ -37,20 +37,14 @@ namespace Renderer
             var camera = new Location(new Vector(0, 0, 0), 0, 0);
             var light = new LightSource(new Vector(10,10,10), 1.0);
             _scene = new Scene(camera, light);
-            
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                        _scene.AddEntity(new Sphere(
-                   new Location(new Vector(20 + 15 * i, 0, 20 + 15 * j), 0, 0),
+
+            _scene.AddEntity(new Sphere(
+                   new Location(new Vector(20, 0, 20), 0, 0),
                    6,
-                   new Color(1.0, 0.3, 0.2),
+                   new Color("#4287f5"),
                    .4,
                    .4
                    ));
-                }
-            }
 
 
             _scene.AddEntity(new Plane(0.3, 0.2));
@@ -68,28 +62,15 @@ namespace Renderer
             {
                 return;
             }
-            var bitmap = Renderer.RenderBitmap(this._scene, 1920, 1080);
-            var encoders = ImageCodecInfo.GetImageEncoders();
-            foreach (var encoder in encoders)
+            Renderer.RenderBitmap(this._scene, 1920, 1080, "out.jpg");
+            Process p = new Process
             {
-                if (encoder.MimeType == "image/jpeg")
+                StartInfo = new ProcessStartInfo("out.jpg")
                 {
-                    var parameters = new EncoderParameters(1);
-                    parameters.Param[0] = new EncoderParameter(Encoder.Quality, 25L);
-                    bitmap.Save("out.jpg", encoder, parameters);
-
-                    Process p = new Process
-                    {
-                        StartInfo = new ProcessStartInfo("out.jpg")
-                        {
-                            UseShellExecute = true
-                        }
-                    };
-                    p.Start();
-                    
-                    break;
+                    UseShellExecute = true
                 }
-            }
+            };
+            p.Start();
         }
 
         protected override void LoadContent()

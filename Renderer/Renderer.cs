@@ -38,7 +38,7 @@ namespace Renderer
             return buf;
         }
 
-        public static Image RenderBitmap(Scene scene, int width, int height)
+        public static Image<Rgba32> RenderBitmap(Scene scene, int width, int height, string path)
         {
             var image = new Image<Rgba32>(width, height);
             int i = 0;
@@ -46,13 +46,19 @@ namespace Renderer
             {
                 for (int y = 0; y < height; y++)
                 {
+                    double percent = i++ / (double) (width * height * 0.01);
+                    if (percent % 5.0 == 0)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Rendering: " + percent + "% completed.");
+                    }
+
                     (var u, var v) = GetNormalizedScreenCoordinates(x, y, width, height);
                     var pixel = ComputePixel(scene, u, v);
                     Rgba32 rgb = new Rgba32((byte)(pixel.color.R * 255), (byte)(pixel.color.G * 255), (byte)(pixel.color.B * 255));
                     image[x, y] = rgb;
-                    System.Diagnostics.Debug.WriteLine("Pixel: " + ++i + "/" + (width * height));
                 }
             }
+            image.SaveAsJpeg(path);
             return image;
         }
 
